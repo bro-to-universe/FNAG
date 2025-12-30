@@ -8,8 +8,8 @@
 
 #include "FNAG/GymPlayer.h"
 
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGymPlayerFlashLightSeatingTest, "GymPlayer.FlashLight.Seating", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::CriticalPriority | EAutomationTestFlags::ProductFilter);
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGymPlayerFlashLightStandingTest, "GymPlayer.FlashLight.Standing", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::CriticalPriority | EAutomationTestFlags::ProductFilter);
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGymPlayerFlashLightOtherActionTest, "GymPlayer.FlashLight.OtherAction", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::CriticalPriority | EAutomationTestFlags::ProductFilter);
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGymPlayerFlashLightSeatingTest, "GymPlayer.FlashLight.Seating", EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter | EAutomationTestFlags::CriticalPriority);
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGymPlayerFlashLightStandingTest, "GymPlayer.FlashLight.Standing", EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter | EAutomationTestFlags::CriticalPriority);
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FGymPlayerFlashLightOtherActionTest, "GymPlayer.FlashLight.OtherAction", EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter | EAutomationTestFlags::CriticalPriority);
 
 #endif

@@ -8,7 +8,7 @@
 
 #include "FNAG/QTEComponent.h"
 
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FQTEComponentBaseTest, "QTEComponent.Base", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::CriticalPriority | EAutomationTestFlags::ProductFilter);
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FQTEComponentLaunchTest, "QTEComponent.Launch", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::CriticalPriority | EAutomationTestFlags::ProductFilter);
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FQTEComponentBaseTest, "QTEComponent.Base", EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter | EAutomationTestFlags::CriticalPriority);
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FQTEComponentLaunchTest, "QTEComponent.Launch", EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter | EAutomationTestFlags::CriticalPriority);
 
 #endif

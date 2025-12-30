@@ -8,6 +8,6 @@
 
 #include "FNAG/FlashLightComponent.h"
 
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FFlashLightComponentTest, "FlashLightComponent", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::CriticalPriority | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FFlashLightComponentTest, "FlashLightComponent", EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter | EAutomationTestFlags::CriticalPriority)
 
 #endif

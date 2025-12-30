@@ -7,6 +7,6 @@
 
 #include "FNAG/LevelConfigFactory.h"
 
-IMPLEMENT_SIMPLE_AUTOMATION_TEST(FLevelConfigFactoryTest, "LevelConfigFactory", EAutomationTestFlags::EditorContext | EAutomationTestFlags::ProductFilter)
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FLevelConfigFactoryTest, "LevelConfigFactory", EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter | EAutomationTestFlags::CriticalPriority)
 
 #endif
