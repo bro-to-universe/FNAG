@@ -14,11 +14,11 @@ bool FGymPlayerFlashLightSeatingTest::RunTest(const FString& Parameters) {
 	}
 	{
 		GymPlayer->TurnFlashLightOn();
-		TestEqual(TEXT("Flashlight should be turned on after call TurnFlashLightOn"), GymPlayer->Flashlight->Intensity, GymPlayer->FlashLightController->IntensityValueOn);
+		TestEqual(TEXT("Flashlight should be turned on after calling TurnFlashLightOn"), GymPlayer->Flashlight->Intensity, GymPlayer->FlashLightController->IntensityValueOn);
 	}
 	{
 		GymPlayer->TurnFlashLightOff();
-		TestEqual(TEXT("Flashlight should be turned off after call TurnFlashLightOff"), GymPlayer->Flashlight->Intensity, GymPlayer->FlashLightController->IntensityValueOff);
+		TestEqual(TEXT("Flashlight should be turned off after calling TurnFlashLightOff"), GymPlayer->Flashlight->Intensity, GymPlayer->FlashLightController->IntensityValueOff);
 	}
 
 	return true;
@@ -35,11 +35,11 @@ bool FGymPlayerFlashLightStandingTest::RunTest(const FString& Parameters) {
 	}
 	{
 		GymPlayer->TurnFlashLightOn();
-		TestEqual(TEXT("Flashlight should be turned on after call TurnFlashLightOn"), GymPlayer->Flashlight->Intensity, GymPlayer->FlashLightController->IntensityValueOn);
+		TestEqual(TEXT("Flashlight should be turned on after calling TurnFlashLightOn"), GymPlayer->Flashlight->Intensity, GymPlayer->FlashLightController->IntensityValueOn);
 	}
 	{
 		GymPlayer->TurnFlashLightOff();
-		TestEqual(TEXT("Flashlight should be turned off after call TurnFlashLightOff"), GymPlayer->Flashlight->Intensity, GymPlayer->FlashLightController->IntensityValueOff);
+		TestEqual(TEXT("Flashlight should be turned off after calling TurnFlashLightOff"), GymPlayer->Flashlight->Intensity, GymPlayer->FlashLightController->IntensityValueOff);
 	}
 
 	return true;
@@ -56,11 +56,11 @@ bool FGymPlayerFlashLightOtherActionTest::RunTest(const FString& Parameters) {
 	}
 	{
 		GymPlayer->TurnFlashLightOn();
-		TestEqual(TEXT("Flashlight should be turned on after call TurnFlashLightOn"), GymPlayer->Flashlight->Intensity, GymPlayer->FlashLightController->IntensityValueOff);
+		TestEqual(TEXT("Flashlight should be turned on after calling TurnFlashLightOn"), GymPlayer->Flashlight->Intensity, GymPlayer->FlashLightController->IntensityValueOff);
 	}
 	{
 		GymPlayer->TurnFlashLightOff();
-		TestEqual(TEXT("Flashlight should be turned off after call TurnFlashLightOff"), GymPlayer->Flashlight->Intensity, GymPlayer->FlashLightController->IntensityValueOff);
+		TestEqual(TEXT("Flashlight should be turned off after calling TurnFlashLightOff"), GymPlayer->Flashlight->Intensity, GymPlayer->FlashLightController->IntensityValueOff);
 	}
 
 	return true;

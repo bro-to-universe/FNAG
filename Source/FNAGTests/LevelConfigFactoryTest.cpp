@@ -14,7 +14,7 @@ bool FLevelConfigFactoryTest::RunTest(const FString& Parameters)
 		ExpectedLevelConfig1->Init(5, 0, 0, 0, 0);
 		if (!LevelConfig1->Compare(ExpectedLevelConfig1))
 		{
-			AddError(TEXT("Level Config 1 isn't matching"));
+			AddError(TEXT("Level Config 1 isn't matched"));
 		}
 	}
 	{
@@ -22,7 +22,7 @@ bool FLevelConfigFactoryTest::RunTest(const FString& Parameters)
 		ULevelConfig* const ELC = NewObject<ULevelConfig>();
 		ELC->Init(0, 0, 0, 0, 0);
 		if (!LC->Compare(ELC)) {
-			AddError(TEXT("Custom night by default should be equal 0,0,0,0,0"));
+			AddError(TEXT("Custom night by default should be equal to 0,0,0,0,0"));
 		}
 	}
 	{
@@ -31,7 +31,7 @@ bool FLevelConfigFactoryTest::RunTest(const FString& Parameters)
 		ULevelConfig* const ELC1 = NewObject<ULevelConfig>();
 		ELC1->Init(0, 0, 0, 15, 0);
 		if (!LC1->Compare(ELC1)) {
-			AddError(TEXT("Custom night updating don't working"));
+			AddError(TEXT("Custom night updating doesn't work"));
 		}
 	}
 

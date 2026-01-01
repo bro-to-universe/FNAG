@@ -15,14 +15,14 @@ ATrainingBar::ATrainingBar()
 
 void ATrainingBar::PullUp()
 {
-	PullAnimation->SequencePlayer->Play();
+	PullAnimation->GetSequencePlayer()->Play();
 }
 
 void ATrainingBar::PullDown() {
-	PullAnimation->SequencePlayer->PlayReverse();
+	PullAnimation->GetSequencePlayer()->PlayReverse();
 }
 
 void ATrainingBar::Training()
 {
-	TrainingAnimation->SequencePlayer->Play();
+	TrainingAnimation->GetSequencePlayer()->Play();
 }

@@ -34,6 +34,14 @@ public:
 	UFUNCTION(BlueprintCallable)
 		FGachiPosition GetCurrentPosition();
 
+	// Get current branch
+	UFUNCTION(BlueprintCallable)
+		FGachiBranch GetCurrentBranch();
+
+	// Get StartAttacking of branch
+	UFUNCTION(BlueprintCallable)
+		bool GetCurrentBranchAttacking();
+
 	// Set difficult number and change delay of positions
 	UFUNCTION(BlueprintCallable)
 		void InitDifficultNumber(int Value);
@@ -53,7 +61,7 @@ public:
 
 public:
 	// Add positions in view port
-	UPROPERTY(EditAnywhere);
+	UPROPERTY(EditAnywhere, BlueprintReadOnly);
 	TArray<FGachiBranch> Branches;
 
 	// Difficult number for player: 0-20

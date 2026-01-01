@@ -9,11 +9,11 @@ bool FFlashLightComponentTest::RunTest(const FString& Parameters) {
 	FlashLight->Init(LightComponent);
 
 	{
-		TestEqual(TEXT("LightComponent's Intensity should be equal IntensityValueOff on Initialization"), LightComponent->Intensity, FlashLight->IntensityValueOff);
+		TestEqual(TEXT("LightComponent's Intensity should be equal to IntensityValueOff on Initialization"), LightComponent->Intensity, FlashLight->IntensityValueOff);
 	}
 	{
 		FlashLight->TurnOn();
-		TestEqual(TEXT("LightComponent's Intensity should be equal IntensityValueOn on TurnOn"), LightComponent->Intensity, FlashLight->IntensityValueOn);
+		TestEqual(TEXT("LightComponent's Intensity should be equal to IntensityValueOn on TurnOn"), LightComponent->Intensity, FlashLight->IntensityValueOn);
 	}
 	{
 		FlashLight->TurnOff();

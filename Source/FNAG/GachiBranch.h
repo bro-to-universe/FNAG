@@ -21,4 +21,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly);
 	TArray<FGachiPosition> Positions;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly);
+	bool bStartAttacking = false; 
+
 };

@@ -39,8 +39,23 @@ FGachiPosition UGachiPatrol::GetCurrentPosition()
 		return Branches[CurrentBranchIndex].Positions[CurrentPositionIndex];
 	}
 
-	UE_LOG(LogTemp, Error, TEXT("Position's index out of reach %d, point's length is %d"), CurrentBranchIndex, BranchesLength);
+	UE_LOG(LogTemp, Error, TEXT("Position's index out of bounds %d, point's length is %d"), CurrentBranchIndex, BranchesLength);
 	return Branches[0].Positions[0];
+}
+
+FGachiBranch UGachiPatrol::GetCurrentBranch()
+{
+	if (CurrentBranchIndex > -1 && CurrentBranchIndex < BranchesLength) {
+		return Branches[CurrentBranchIndex];
+	}
+
+	UE_LOG(LogTemp, Error, TEXT("Branch's index out of bounds %d, branches' length is %d"), CurrentBranchIndex, BranchesLength);
+	return Branches[0];
+}
+
+bool UGachiPatrol::GetCurrentBranchAttacking()
+{
+	return GetCurrentBranch().bStartAttacking;
 }
 
 void UGachiPatrol::InitDifficultNumber(int Value)
@@ -95,7 +110,7 @@ void UGachiPatrol::ChangeCurrentIndex(int Value)
 		}
 	}
 
-	// Visit new point, if is empty
+	// Visit new point, if it is empty
 	AGachiPoint* NextPoint = NextBranchPositions[NextPositionIndex].Point;
 	if (!NextPoint->IsPointBusy()) {
 		Position.Point->LeftPoint();

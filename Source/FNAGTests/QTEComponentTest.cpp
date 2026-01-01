@@ -15,7 +15,7 @@ bool FQTEComponentBaseTest::RunTest(const FString& Parameters)
 	}
 	{
 		QTE->AddEvent(YEvent);
-		TestEqual(TEXT("QTE has second added event Y"), QTE->GetEventByIndex(1), YEvent);
+		TestEqual(TEXT("QTE has added second event Y"), QTE->GetEventByIndex(1), YEvent);
 	}
 	{
 		TestEqual(TEXT("QTE returns empty event when out of bounds"), QTE->GetEventByIndex(3), UQTEComponent::EmptyEvent);
@@ -23,23 +23,23 @@ bool FQTEComponentBaseTest::RunTest(const FString& Parameters)
 
 	const FName GeneratedEvent = QTE->GenerateRandomEvent();
 	{
-		TestNotEqual(TEXT("QTE generated event not equal to EmptyEvent"), GeneratedEvent, UQTEComponent::EmptyEvent);
+		TestNotEqual(TEXT("QTE generates event that is not equal to EmptyEvent"), GeneratedEvent, UQTEComponent::EmptyEvent);
 	}
 
 	const FName StoringEvent = QTE->GetStoringEvent();
 	{
-		TestEqual(TEXT("QTE has generated event equal to storing"), StoringEvent, GeneratedEvent);
+		TestEqual(TEXT("QTE generates event that is equal to storing"), StoringEvent, GeneratedEvent);
 	}
 
 	bool IsEventStoring = QTE->GetEventStoring();
 	{
-		TestEqual(TEXT("QTE should storing event"), IsEventStoring, true);
+		TestEqual(TEXT("QTE should store event"), IsEventStoring, true);
 	}
 
 	QTE->ClearStoringEvent();
 	IsEventStoring = QTE->GetEventStoring();
 	{
-		TestEqual(TEXT("QTE, after clearing, doesn't storing event"), IsEventStoring, false);
+		TestEqual(TEXT("QTE, after clearing, doesn't store event"), IsEventStoring, false);
 	}
 
 	return true;
@@ -52,20 +52,20 @@ bool FQTEComponentLaunchTest::RunTest(const FString& Parameters) {
 
 	{
 		QTE->LaunchEvent(5.f);
-		TestEqual(TEXT("QTE storing X event"), QTE->GetStoringEvent(), XEvent);
+		TestEqual(TEXT("QTE stores X event"), QTE->GetStoringEvent(), XEvent);
 	}
 	{
 		QTE->FinishEvent();
-		TestEqual(TEXT("QTE after finishing should storing empty event"), QTE->GetStoringEvent(), UQTEComponent::EmptyEvent);
+		TestEqual(TEXT("QTE after finishing should store empty event"), QTE->GetStoringEvent(), UQTEComponent::EmptyEvent);
 	}
 
 	{
 		QTE->LaunchEvent(5.f);
-		TestEqual(TEXT("QTE storing X event second time"), QTE->GetStoringEvent(), XEvent);
+		TestEqual(TEXT("QTE stores X event second time"), QTE->GetStoringEvent(), XEvent);
 	}
 	{
 		QTE->ReactEvent();
-		TestEqual(TEXT("QTE after reacting should storing empty event"), QTE->GetStoringEvent(), UQTEComponent::EmptyEvent);
+		TestEqual(TEXT("QTE after reacting should store empty event"), QTE->GetStoringEvent(), UQTEComponent::EmptyEvent);
 	}
 
 	return true;
