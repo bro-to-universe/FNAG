@@ -36,5 +36,13 @@ void AClickActor::Tick(float DeltaTime)
 void AClickActor::OnClickCallback(UPrimitiveComponent* ClickedComponent, FKey ButtonClicked)
 {
 	UE_LOG(LogTemp, Warning, TEXT("Clicked"));
-	OnMyActorClicked.Broadcast(MeshToReturnPosition->GetComponentLocation());
+	OnMyActorClicked.Broadcast(GetMeshReturnPosition());
+}
+
+FVector AClickActor::GetMeshReturnPosition()
+{
+	if (!MeshToReturnPosition) {
+		UE_LOG(LogTemp, Error, TEXT("MeshToReturnPosition isn't initialized"));
+	}
+	return MeshToReturnPosition->GetComponentLocation();
 }

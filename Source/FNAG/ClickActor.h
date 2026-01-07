@@ -30,6 +30,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 		void OnClickCallback(UPrimitiveComponent* ClickedComponent, FKey ButtonClicked);
 
+	UFUNCTION(BlueprintCallable)
+		FVector GetMeshReturnPosition();
+
 public:
 	// Event dispatcher, broadcast when someone clicked and return actor's location
 	UPROPERTY(BlueprintAssignable);
@@ -41,7 +44,7 @@ public:
 	UPROPERTY(EditAnywhere);
 	UStaticMeshComponent* MeshForClick;
 
-	UPROPERTY(EditAnywhere);
+	UPROPERTY(EditAnywhere, BlueprintReadOnly);
 	UStaticMeshComponent* MeshToReturnPosition;
 
 	UPROPERTY(EditAnywhere);

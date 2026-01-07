@@ -117,6 +117,14 @@ public:
 	UFUNCTION(BlueprintCallable)
 		void TurnFlashLightOff();
 
+	UFUNCTION(BlueprintCallable)
+		void ClickLeftDoorEvent(FVector DoorLocation);
+	UFUNCTION(BlueprintCallable)
+		void ClickRightDoorEvent(FVector DoorLocation);
+		// Handle TrainingBar's click event
+	UFUNCTION(BlueprintCallable)
+		void ClickTrainingBarEvent(FVector TrainingBarLocation);
+
 	// Event for tracking player's position
 	UPROPERTY(BlueprintAssignable);
 	FOnPlayerMovingSignature OnPlayerMoving;
@@ -253,10 +261,7 @@ private:
 	void BindDoorsEvents();
 	// Template of click event for door
 	void ClickDoorEvent(TEnumAsByte<EPlayerActionType> NextDoorStandingType, FVector DoorLocation);
-	UFUNCTION()
-		void ClickLeftDoorEvent(FVector DoorLocation);
-	UFUNCTION()
-		void ClickRightDoorEvent(FVector DoorLocation);
+
 	// Template of state changed event for door
 	void DoorStateChangedEvent(TEnumAsByte<EPlayerActionType> DoorClosingType, TEnumAsByte<EPlayerActionType> DoorStandingType, bool IsClosed);
 	UFUNCTION()
@@ -266,9 +271,6 @@ private:
 
 	// Bind TrainingBar's click event
 	void BindTrainingBarEvent();
-	// Handle TrainingBar's click event
-	UFUNCTION()
-		void ClickTrainingBarEvent(FVector TrainingBarLocation);
 
 	// Launch QTE 
 	void LaunchQTE();

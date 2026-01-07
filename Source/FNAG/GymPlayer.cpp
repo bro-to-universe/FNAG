@@ -205,6 +205,9 @@ void AGymPlayer::SetActionType(TEnumAsByte<EPlayerActionType> Value)
 	case EPlayerActionType::RightDoorClosing:
 		SetStaminaToChangedPerSecond(-5.f);
 		break;
+	case EPlayerActionType::TrainingBarStanding:
+		SetStaminaToChangedPerSecond(-2.f);
+		break;
 
 	case EPlayerActionType::Standing:
 		SetStaminaToChangedPerSecond(1.f);
