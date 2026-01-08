@@ -181,6 +181,9 @@ public:
 	UPROPERTY(BlueprintReadOnly);
 	UQTEComponent* QTE;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly);
+	float QTEDelay = 3.f; 
+
 	// Player's initialized position
 	UPROPERTY(BlueprintReadOnly);
 	FVector InitPosition;
@@ -250,7 +253,7 @@ private:
 	// Amplifier for StaminaPerSecond
 	float AmplifierStaminaToChangedPerSecond = 1.f;
 	// Amplifier for amplifier for StaminaPerSecond
-	const float AmplifierAmplifierStaminaToChangedPerSecond = 0.9f;
+	const float AmplifierAmplifierStaminaToChangedPerSecond = 0.95f;
 
 	// Find all exist doors in game
 	void FindDoors();
@@ -287,7 +290,6 @@ private:
 		void QTEFinishEvent(bool IsSuccess);
 	// Amplifier for change qte's delay
 	void BoostQTEDelay();
-	float QTEDelay = 5.f;
 	float AmplifierQTEDelay = 1.f;
 	// How will change amplifier
 	const float AmplifierAmplifierQTEDelay = 0.9f;

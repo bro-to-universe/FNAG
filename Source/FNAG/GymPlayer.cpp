@@ -271,7 +271,15 @@ void AGymPlayer::SetStamina(float NewStamina)
 }
 void AGymPlayer::SetStaminaToChangedPerSecond(float Value)
 {
-	StaminaToChangedPerSecond = Value * AmplifierStaminaToChangedPerSecond;
+	// Amplifier is less than 1 so consumption (negative Value) will deacrease over time (if player trains)
+	// If Value is positive then it will restore in the same flow without amplifying 
+	// If it will be required by gameplay then we can make relax the same with amplification (and even reducing restoring)
+	if (Value < 0) {
+		StaminaToChangedPerSecond = Value * AmplifierStaminaToChangedPerSecond;
+	}
+	else {
+		StaminaToChangedPerSecond = Value;
+	}
 }
 void AGymPlayer::BoostStaminaToChangedPerSecond() {
 	AmplifierStaminaToChangedPerSecond *= AmplifierAmplifierStaminaToChangedPerSecond;
