@@ -68,6 +68,12 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly);
 	int DifficultNumber = 10;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly);
+	int CurrentPathIndex = 0;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly);
+	int MaxPossiblePaths = 1;
+
 	// Max difficult number
 	int MaxDifficultNumber = 20;
 

@@ -96,6 +96,7 @@ void UGachiPatrol::ChangeCurrentIndex(int Value)
 		NextBranchIndex = NextBranchIndex % BranchesLength;
 	}
 	else {
+		CurrentPathIndex = FMath::RoundHalfToEven((float)(FMath::FRand() * (MaxPossiblePaths - 1)));
 		NextBranchIndex = 0;
 	}
 
@@ -103,12 +104,21 @@ void UGachiPatrol::ChangeCurrentIndex(int Value)
 	const TArray<FGachiPosition> NextBranchPositions = Branches[NextBranchIndex].Positions;
 	const FGachiPosition Position = Branches[CurrentBranchIndex].Positions[CurrentPositionIndex];
 	const int PositionsLength = NextBranchPositions.Num();
-	int NextPositionIndex = FMath::RoundHalfToEven((float)(FMath::FRand() * (PositionsLength - 1)));
+
+	// filling the array with items that belong to chosen path   
+	TArray<int> NextOnePathPositionIndexes = {};
 	for (int i = 0; i < PositionsLength; ++i) {
-		if (Position.PathNumber == NextBranchPositions[i].PathNumber) {
-			NextPositionIndex = i;
+		if (Position.PathNumber == CurrentPathIndex) {
+			NextOnePathPositionIndexes.Add(i);
 		}
 	}
+	
+	const int PositionsOnePathLength = NextOnePathPositionIndexes.Num();
+	int NextPositionIndex = FMath::RoundHalfToEven((float)(FMath::FRand() * (PositionsLength - 1)));
+	if (PositionsOnePathLength > 0) {
+		NextPositionIndex = NextOnePathPositionIndexes[FMath::RoundHalfToEven((float)(FMath::FRand() * (PositionsOnePathLength - 1)))];
+	}
+
 
 	// Visit new point, if it is empty
 	AGachiPoint* NextPoint = NextBranchPositions[NextPositionIndex].Point;
